@@ -1,0 +1,102 @@
+body {
+    font: 14px "Century Gothic", Futura, sans-serif;
+    margin: 20px;
+    background: #cccccc;;
+}
+
+div {
+    color: white;
+}
+
+
+.aquaMan {
+    margin-bottom: 10px;
+    text-align: center;
+    width: 90px;
+    text-color: w
+}
+
+.product{
+    width: 350px;
+    height: 700px;
+    background: #33353F;
+    border-radius: 15px;
+}
+.d1 input {
+    width: 325px;
+    height: 42px;
+    padding-left: 10px;
+    border: 2px solid #3f3f3f;
+    border-radius: 10px;
+    outline: none;
+    background: #4B4E5C;
+    color: #9E9C9C;
+    color: white;
+
+}
+.d1 button{
+    position: absolute;
+    height: 48px;
+    right: 0px;
+    bottom:0px;
+    width: 42px;
+    border: none;
+    background: #3f3f3f;
+    border-radius: 0 10px 10px 0;
+    cursor: pointer;
+}
+.d1 button:before {
+    content: "\f002";
+    font-family: FontAwesome;
+    font-size: 16px;
+    color: #F9F0DA;
+}
+
+input::-moz-placeholder { color: white; }
+input::-webkit-input-placeholder { color: white; }
+
+form {
+    position: relative;
+    width: 340px;
+    margin: 0 auto;
+}
+
+.switch img {
+    width:130px;
+}
+.switch {
+    text-align: center;
+    background: #696b79;
+    border-radius: 0 0 15px 15px;
+    height: 140px;
+
+}
+
+.ctalog img {
+    width: 80px;
+    height: 110px;
+    border-radius: 20px;
+
+}
+.ctalog {
+    height: 385px;
+    padding-left: 7px;
+    padding-top: 25px;
+}
+
+.ctalog p {
+    width: 80px;
+    font-size: 0.8em;
+    text-align: center;
+;
+}
+.catalog1{
+    float: left;
+    margin-right: 5px;
+}
+
+
+
+.img1{
+    display:inline-block;
+}
