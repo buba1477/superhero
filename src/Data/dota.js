@@ -71,19 +71,30 @@ let data = {
         }
     ],
 
-    "dlee": [
+    "dlee": [],
 
-    ]
+    "sas": "",
 };
 
+window.state=data;
+export let handlerPush = (messa) => {
 
+    data.dlee.push(messa);
+    appMar(data);
+}
 
+data.mar = data.marvel.filter((number) => {
+    return number.name.toLowerCase().indexOf('') !== -1;
+});
 
-        export let handlerPush = (messa) => {
+export let hanlderChang = (prop) => {
 
-              data.dlee.push(messa);
-            appMar(data);
-        }
+       data.mar = data.marvel.filter((number) => {
+           return number.name.toLowerCase().indexOf(prop) !== -1;
+       })
+
+    appMar(data);
+};
 
 
 export default data;

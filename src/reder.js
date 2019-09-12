@@ -6,7 +6,8 @@ import SwitchDc from "./Components/SwitchDc";
 import SwitchMarvel from "./Components/SwitchMarvel";
 import {BrowserRouter, NavLink, Route, Redirect} from "react-router-dom";
 import {handlerPush} from './Data/dota'
-
+import Search from "./Components/Searh";
+import {hanlderChang} from "./Data/dota"
 
 
 const App = (props) => {
@@ -19,16 +20,13 @@ const App = (props) => {
                 <ListHero dcd={props.state.dlee} />
 
                 <div className="d1">
-                    <form>
-                        <input type="text" placeholder="Имя героя..."/>
-                        <button type="submit"></button>
-                    </form>
+                    <Search hanchang ={hanlderChang} />
                 </div>
                 <div>
                     <Route path='/dc' render={() => <SwitchDc dc={props.state.dc}  />}/>
                 </div>
                 <div>
-                     <Route path='/marvel' render={() => <SwitchMarvel marvel={props.state.marvel} handler = {handlerPush}/>}/>
+                     <Route path='/marvel' render={() => <SwitchMarvel marvel={props.state.mar} handler = {handlerPush} />} />
                 </div>
                 <div>
                     <Route exact path="/" render={() => (<Redirect to="/marvel"/>)}/>
@@ -37,7 +35,7 @@ const App = (props) => {
                     <div className='switch'>
                         <div className='img1'>
                             <NavLink to='/marvel'><img
-                                src='https://i.pinimg.com/originals/5f/2e/8b/5f2e8bb9837ac966fe4346387082d346.png'></img></NavLink>
+                                src='https://avatanplus.com/files/resources/mid/5ab55b8326f98162546d7858.png'></img></NavLink>
                         </div>
                         <div className='img1'>
                             <NavLink to='/dc'><img
