@@ -8,6 +8,7 @@ import {BrowserRouter, NavLink, Route, Redirect} from "react-router-dom";
 import {handlerPush} from './Data/dota'
 import Search from "./Components/Searh";
 import {hanlderChang} from "./Data/dota"
+import {handlerIn} from "./Data/dota"
 
 
 const App = (props) => {
@@ -20,10 +21,10 @@ const App = (props) => {
                 <ListHero dcd={props.state.dlee} />
 
                 <div className="d1">
-                    <Search hanchang ={hanlderChang} />
+                    <Search hanchang ={hanlderChang} textarea={props.state.sas}/>
                 </div>
                 <div>
-                    <Route path='/dc' render={() => <SwitchDc dc={props.state.dc}  />}/>
+                    <Route path='/dc' render={() => <SwitchDc dc={props.state.dis} handler = {handlerPush} />}/>
                 </div>
                 <div>
                      <Route path='/marvel' render={() => <SwitchMarvel marvel={props.state.mar} handler = {handlerPush} />} />
@@ -34,11 +35,11 @@ const App = (props) => {
                 <div>
                     <div className='switch'>
                         <div className='img1'>
-                            <NavLink to='/marvel'><img
+                            <NavLink to='/marvel'><img onClick={handlerIn}
                                 src='https://avatanplus.com/files/resources/mid/5ab55b8326f98162546d7858.png'></img></NavLink>
                         </div>
                         <div className='img1'>
-                            <NavLink to='/dc'><img
+                            <NavLink to='/dc'><img onClick={handlerIn}
                                 src='http://pluspng.com/img-png/dc-comics-logo-png-dc-comics-logo-png-600.png'></img></NavLink>
 
                         </div>

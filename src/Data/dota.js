@@ -73,28 +73,40 @@ let data = {
 
     "dlee": [],
 
-    "sas": "",
+    "sas": ""
 };
 
-window.state=data;
+window.state = data;
 export let handlerPush = (messa) => {
 
     data.dlee.push(messa);
     appMar(data);
 }
 
+data.dis = data.dc.filter((number) => {
+    return number.name.toLowerCase().indexOf('') !== -1;
+});
 data.mar = data.marvel.filter((number) => {
     return number.name.toLowerCase().indexOf('') !== -1;
 });
 
 export let hanlderChang = (prop) => {
-
-       data.mar = data.marvel.filter((number) => {
-           return number.name.toLowerCase().indexOf(prop) !== -1;
-       })
-
+    data.sas = prop;
+    data.mar = data.marvel.filter((number) => {
+        return number.name.toLowerCase().indexOf(prop) !== -1;
+    });
+    data.dis = data.dc.filter((number) => {
+        return number.name.toLowerCase().indexOf(prop) !== -1;
+    });
     appMar(data);
 };
+
+export let handlerIn = () => {
+    data.sas = "";
+    hanlderChang("");
+    appMar(data);
+ 
+}
 
 
 export default data;

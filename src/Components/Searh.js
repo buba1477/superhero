@@ -6,11 +6,12 @@ const Search = (props) => {
     let serVal = () => {
         let das = newRefrea.current.value;
         props.hanchang(das);
+
     };
 debugger;
     return (
         <form>
-            <input onChange={serVal} ref={newRefrea} type="text" placeholder="Имя героя..."/>
+            <input onChange={serVal} ref={newRefrea} type="text" placeholder = "Поиск..." value={props.textarea}/>
             <button type="submit"></button>
         </form>
     )
