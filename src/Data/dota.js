@@ -76,7 +76,7 @@ let data = {
     "sas": ""
 };
 
-window.state = data;
+
 export let handlerPush = (messa) => {
 
     data.dlee.push(messa);

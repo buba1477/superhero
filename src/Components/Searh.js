@@ -8,7 +8,7 @@ const Search = (props) => {
         props.hanchang(das);
 
     };
-debugger;
+
     return (
         <form>
             <input onChange={serVal} ref={newRefrea} type="text" placeholder = "Поиск..." value={props.textarea}/>
