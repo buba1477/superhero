@@ -1,23 +1,23 @@
 import React from 'react';
 
 
-const SwitchMarvel = (props) => {
+let SwitchMarvel = (prop) => {
+    prop.marvel.dis = prop.marvel.marvel.filter((number) => {
+        return number.name.toLowerCase().indexOf(prop.marvel.sas) !== -1;
+    });
 
- /*   const Handler = (soc) => {
-        var attribute = ;
-        alert (attribute);
-    }*/
     return (
         <div className='ctalog' >
-            {props.marvel.map((item) =>
+            {prop.marvel.dis.map((item) =>
                 <div className='catalog1'>
-                    <img src={item.image} onClick={()=> props.handler(item)}></img>
+                    <img src={item.image} onClick={() => prop.handler(item)}></img>
 
                     <p>{item.name}</p>
                 </div>
             )}
         </div>
     )
+
 };
 
 
