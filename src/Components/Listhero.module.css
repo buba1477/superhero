@@ -3,3 +3,26 @@
 .listhero {
     height: 160px;
 }
+
+.gallery {
+    display: block;
+    position: relative;
+  }
+  
+  .close {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    background: black;
+    padding: 4px 8px;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+  
+  }
+  
+  .gallery:hover .close {
+    display: block;
+  }
+  

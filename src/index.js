@@ -18,7 +18,7 @@ class App extends React.Component {
         this.handlerP = this.handlerP.bind(this);
         this.hanlderChang = this.hanlderChang.bind(this);
         this.handlerIn = this.handlerIn.bind(this);
-        debugger;
+    
         this.state = {
             "dc": [
                 {
