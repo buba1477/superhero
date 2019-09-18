@@ -94,13 +94,13 @@ class App extends React.Component {
     };
 
     handlerP = (messag) => {
-        let dlee = [];
-        dlee.push(messag)
-        this.setState({
-            dlee: dlee
-
-
-        })
+        
+        this.setState( (state) => {
+            state.dlee = state.dlee.concat([messag]);
+            return state;
+        });
+       
+    
     }
 
     hanlderChang = (prop) => {
