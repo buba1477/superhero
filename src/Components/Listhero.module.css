@@ -26,3 +26,28 @@
     display: block;
   }
   
+
+  .ctalog {
+    height: 135px;
+    padding-left: 7px;
+    padding-top: 25px;
+    
+    overflow: hidden;
+    overflow-x: auto;
+    
+    white-space:nowrap;
+}
+
+.catalog1 {
+    display: inline-block;
+    vertical-align: top;
+    
+    margin-right: 5px;
+  
+}
+.ctalog img {
+  width: 80px;
+  height: 110px;
+  border-radius: 20px;
+
+}
