@@ -18,7 +18,8 @@ class App extends React.Component {
         this.handlerP = this.handlerP.bind(this);
         this.hanlderChang = this.hanlderChang.bind(this);
         this.handlerIn = this.handlerIn.bind(this);
-    
+        this.handlDel = this.handlDel.bind(this);
+       
         this.state = {
             "dc": [
                 {
@@ -116,13 +117,21 @@ class App extends React.Component {
             sas: ""
         })
     }
-
+   
+ handlDel = (prop) => {
+    
+    this.setState( (state) => {
+        state.dlee.splice (prop.index,1)    
+         return state;
+    });
+    
+ }
     render() {
         return (
             <BrowserRouter>
                 <div className='product'>
 
-                    <ListHero dcd={this.state.dlee} />
+                    <ListHero dcd={this.state.dlee} handler ={this.handlDel} />
 
                     <div className="d1">
                         <Search hanchang={this.hanlderChang} state={this.state} />
