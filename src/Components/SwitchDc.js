@@ -11,9 +11,9 @@ const SwitchDc = (prop) => {
     return (
         <div className='ctalog'>
 
-            {prop.dc.dis.map((item) =>
+            {prop.dc.dis.map((item,index) =>
                 <div className='catalog1'>
-                    <img src={item.image} onClick={() => prop.handler(item)}></img>
+                    <img src={item.image} onClick={() => prop.handler(item,index)}></img>
                     <p>{item.name}</p>
                 </div>
             )}

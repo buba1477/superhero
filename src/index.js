@@ -19,7 +19,7 @@ class App extends React.Component {
         this.hanlderChang = this.hanlderChang.bind(this);
         this.handlerIn = this.handlerIn.bind(this);
         this.handlDel = this.handlDel.bind(this);
-       
+
         this.state = {
             "dc": [
                 {
@@ -97,12 +97,22 @@ class App extends React.Component {
 
     handlerP = (messag) => {
         
-        this.setState( (state) => {
+        this.setState((state) => {
+            
+             state.dlee.forEach(element => {
+               
+                  if (element.name == messag.name) {
+                    
+                      
+                }
+
+            });
+
             state.dlee = state.dlee.concat([messag]);
             return state;
         });
-       
-    
+
+
     }
 
     hanlderChang = (prop) => {
@@ -117,21 +127,21 @@ class App extends React.Component {
             sas: ""
         })
     }
-   
- handlDel = (prop) => {
-    
-    this.setState( (state) => {
-        state.dlee.splice (prop.index,1)    
-         return state;
-    });
-    
- }
+
+    handlDel = (prop) => {
+
+        this.setState((state) => {
+            state.dlee.splice(prop.index, 1)
+            return state;
+        });
+
+    }
     render() {
         return (
             <BrowserRouter>
                 <div className='product'>
 
-                    <ListHero dcd={this.state.dlee} handler ={this.handlDel} />
+                    <ListHero dcd={this.state.dlee} handler={this.handlDel} />
 
                     <div className="d1">
                         <Search hanchang={this.hanlderChang} state={this.state} />
@@ -166,10 +176,10 @@ class App extends React.Component {
 }
 
 
-    ReactDOM.render(
-        <App  />,
-        document.getElementById('root')
-    );
+ReactDOM.render(
+    <App />,
+    document.getElementById('root')
+);
 
 
 

@@ -3,9 +3,7 @@ import s from './Listhero.module.css'
 
 const Listhero = (props) => {
 
-let delCah = () => {
 
-}
    
     return (
         <div className={s.listhero}>
