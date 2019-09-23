@@ -1,5 +1,6 @@
 import React from 'react';
 import s from './Listhero.module.css'
+import { Hero } from './Hero';
 
 const Listhero = (props) => {
 
@@ -8,14 +9,10 @@ const Listhero = (props) => {
     return (
         <div className={s.listhero}>
             <div className={s.ctalog} >
-            {props.dcd.map((item,index) =>
-                <div className={s.catalog1}>
-                    <div className ={s.gallery}>
-                    <img src={item.image}></img>
-                    <span className={s.close} onClick= {() => props.handler({index})}>x</span>
-                    
-                    </div>
-                </div>
+            {
+                props.dcd.map((item,index) =>
+                
+                <Hero key={'Hero'+index} handler = {props.handler} index = {index} item = {item}/>
             )
             }
             </div>
