@@ -13,6 +13,7 @@ const Listhero = (props) => {
                     <div className ={s.gallery}>
                     <img src={item.image}></img>
                     <span className={s.close} onClick= {() => props.handler({index})}>x</span>
+                    
                     </div>
                 </div>
             )

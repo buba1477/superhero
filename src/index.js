@@ -15,11 +15,12 @@ import Search from "./Components/Searh";
 class App extends React.Component {
     constructor(props) {
         super(props);
-        this.handlerP = this.handlerP.bind(this);
-        this.hanlderChang = this.hanlderChang.bind(this);
-        this.handlerIn = this.handlerIn.bind(this);
-        this.handlDel = this.handlDel.bind(this);
-
+        // this.handlerP = this.handlerP.bind(this);
+        // this.hanlderChang = this.hanlderChang.bind(this);
+        // this.handlerIn = this.handlerIn.bind(this);
+        // this.handlDel = this.handlDel.bind(this);
+        // this.handlerCount = this.handlerCount.bind(this)
+        
         this.state = {
             "dc": [
                 {
@@ -90,25 +91,29 @@ class App extends React.Component {
                 }
             ],
             "dlee": [],
-            "sas": ""
+            "sas": "",
+            "count": ""
         };
 
     };
 
+    handlerCount = () => {
+       
+        this.setState({
+            count: +this.state.count+1
+        })
+    }
+    
     handlerP = (messag) => {
         
         this.setState((state) => {
-            
-             state.dlee.forEach(element => {
-               
-                  if (element.name == messag.name) {
-                    
-                      
-                }
-
-            });
-
-            state.dlee = state.dlee.concat([messag]);
+                        
+                  if ( state.dlee.indexOf(messag) == -1) {
+                    state.dlee = state.dlee.concat([messag]); 
+                }else{
+                    this.handlerCount();
+                }        
+                this.state.count = "";
             return state;
         });
 
@@ -141,8 +146,8 @@ class App extends React.Component {
             <BrowserRouter>
                 <div className='product'>
 
-                    <ListHero dcd={this.state.dlee} handler={this.handlDel} />
-
+                    <ListHero dcd={this.state.dlee} handler={this.handlDel} count ={this.state.count} />
+                           
                     <div className="d1">
                         <Search hanchang={this.hanlderChang} state={this.state} />
                     </div>
