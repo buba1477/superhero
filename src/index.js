@@ -117,7 +117,7 @@ class App extends React.Component {
     
     handlerP = (messag) => {
 
-        console.warn(messag);
+    
         
         this.setState((state) => {
                         
