@@ -15,79 +15,90 @@ import Search from "./Components/Searh";
 class App extends React.Component {
     constructor(props) {
         super(props);
-        // this.handlerP = this.handlerP.bind(this);
-        // this.hanlderChang = this.hanlderChang.bind(this);
-        // this.handlerIn = this.handlerIn.bind(this);
-        // this.handlDel = this.handlDel.bind(this);
-        // this.handlerCount = this.handlerCount.bind(this)
         
         this.state = {
             "dc": [
                 {
                     "name": "Аквамен",
-                    "image": "http://www.ramrus.ru/pic/dc/aquaman.jpg"
+                    "image": "http://www.ramrus.ru/pic/dc/aquaman.jpg",
+                    "count": ""
                 },
                 {
                     "name": "Бэтмен",
-                    "image": "http://www.ramrus.ru/pic/dc/batman.jpg"
+                    "image": "http://www.ramrus.ru/pic/dc/batman.jpg",
+                    "count": ""
                 },
                 {
                     "name": "Киборг",
-                    "image": "http://www.ramrus.ru/pic/dc/cyborg.jpg"
+                    "image": "http://www.ramrus.ru/pic/dc/cyborg.jpg",
+                    "count": ""
                 },
                 {
                     "name": "Флэш",
-                    "image": "http://www.ramrus.ru/pic/dc/flash.jpg"
+                    "image": "http://www.ramrus.ru/pic/dc/flash.jpg",
+                    "count": ""
                 },
                 {
                     "name": "Зелёный Фонарь",
-                    "image": "http://www.ramrus.ru/pic/dc/greenlantern.jpg"
+                    "image": "http://www.ramrus.ru/pic/dc/greenlantern.jpg",
+                    "count": ""
                 },
                 {
                     "name": "Супергёрл",
-                    "image": "http://www.ramrus.ru/pic/dc/supergirl.jpg"
+                    "image": "http://www.ramrus.ru/pic/dc/supergirl.jpg",
+                    "count": ""
                 },
                 {
                     "name": "Супермен",
-                    "image": "http://www.ramrus.ru/pic/dc/superman.jpg"
+                    "image": "http://www.ramrus.ru/pic/dc/superman.jpg",
+                    "count": ""
                 },
                 {
                     "name": "Чудо-женщина",
-                    "image": "http://www.ramrus.ru/pic/dc/wonderwoman.jpg"
+                    "image": "http://www.ramrus.ru/pic/dc/wonderwoman.jpg",
+                    "count": ""
                 }
             ],
             "marvel": [
                 {
                     "name": "Чёрная Пантера",
-                    "image": "http://www.ramrus.ru/pic/marvel/blackpanther.jpg"
+                    "image": "http://www.ramrus.ru/pic/marvel/blackpanther.jpg",
+                    "count": ""
                 },
                 {
                     "name": "Капитан Америка",
-                    "image": "http://www.ramrus.ru/pic/marvel/captainamerica.jpg"
+                    "image": "http://www.ramrus.ru/pic/marvel/captainamerica.jpg",
+                    "count": ""
                 },
                 {
                     "name": "Сорвиголова",
-                    "image": "http://www.ramrus.ru/pic/marvel/daredevil.jpg"
+                    "image": "http://www.ramrus.ru/pic/marvel/daredevil.jpg",
+                    "count": ""
                 },
                 {
                     "name": "Доктор Стрэндж",
-                    "image": "http://www.ramrus.ru/pic/marvel/doctorstrange.jpg"
+                    "image": "http://www.ramrus.ru/pic/marvel/doctorstrange.jpg",
+                    "count": ""
                 },
                 {
                     "name": "Халк",
-                    "image": "http://www.ramrus.ru/pic/marvel/hulk.jpg"
+                    "image": "http://www.ramrus.ru/pic/marvel/hulk.jpg",
+                    "count": ""
                 },
                 {
                     "name": "Железнй Человек",
-                    "image": "http://www.ramrus.ru/pic/marvel/ironman.jpg"
+                    "image": "http://www.ramrus.ru/pic/marvel/ironman.jpg",
+                    "count": "",
                 },
                 {
                     "name": "Человек-паук",
-                    "image": "http://www.ramrus.ru/pic/marvel/spiderman.jpg"
+                    "image": "http://www.ramrus.ru/pic/marvel/spiderman.jpg",
+                    "count": ""
                 },
                 {
                     "name": "Тор",
-                    "image": "http://www.ramrus.ru/pic/marvel/thor.jpg"
+                    "image": "http://www.ramrus.ru/pic/marvel/thor.jpg",
+                    "count": ""
                 }
             ],
             "dlee": [],
@@ -95,25 +106,27 @@ class App extends React.Component {
             "count": ""
         };
 
+
     };
 
-    handlerCount = () => {
-       
-        this.setState({
-            count: +this.state.count+1
-        })
-    }
+    handlerCount = (heroObject) => {
+        let obj = this.state.dlee.find(a => a.image === heroObject.image);
+        obj.count ++;
+
+         }
     
     handlerP = (messag) => {
+
+        console.warn(messag);
         
         this.setState((state) => {
                         
-                  if ( state.dlee.indexOf(messag) == -1) {
-                    state.dlee = state.dlee.concat([messag]); 
-                }else{
-                    this.handlerCount();
+            if ( state.dlee.indexOf(messag) == -1) {
+                state.dlee = state.dlee.concat([messag]); 
+            }else {
+                    this.handlerCount(messag);
                 }        
-                this.state.count = "";
+              
             return state;
         });
 
