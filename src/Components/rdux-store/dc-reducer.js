@@ -4,42 +4,42 @@ let initalState = {
         {
             "name": "Аквамен",
             "image": "http://www.ramrus.ru/pic/dc/aquaman.jpg",
-            "count": ""
+            "count": null
         },
         {
             "name": "Бэтмен",
             "image": "http://www.ramrus.ru/pic/dc/batman.jpg",
-            "count": ""
+            "count": null
         },
         {
             "name": "Киборг",
             "image": "http://www.ramrus.ru/pic/dc/cyborg.jpg",
-            "count": ""
+            "count": null
         },
         {
             "name": "Флэш",
             "image": "http://www.ramrus.ru/pic/dc/flash.jpg",
-            "count": ""
+            "count": null
         },
         {
             "name": "Зелёный Фонарь",
             "image": "http://www.ramrus.ru/pic/dc/greenlantern.jpg",
-            "count": ""
+            "count": null
         },
         {
             "name": "Супергёрл",
             "image": "http://www.ramrus.ru/pic/dc/supergirl.jpg",
-            "count": ""
+            "count": null
         },
         {
             "name": "Супермен",
             "image": "http://www.ramrus.ru/pic/dc/superman.jpg",
-            "count": ""
+            "count": null
         },
         {
             "name": "Чудо-женщина",
             "image": "http://www.ramrus.ru/pic/dc/wonderwoman.jpg",
-            "count": ""
+            "count": null
         }
     ]
 };

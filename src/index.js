@@ -36,7 +36,7 @@ const App = props => {
                     />
                 </div>
                 <div>
-                    <Route exact path="/" render={() => <Redirect to="/marvel" />} />
+                    <Route exact path="/" render={() => <Redirect to="/dc" />} />
                 </div>
                 <div>
                     <div className="switch">
