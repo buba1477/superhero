@@ -1,24 +1,25 @@
-import React from 'react';
+import React from "react";
+import { dleePushCreateAction } from "./rdux-store/dlee-reducer";
 
-
-let SwitchMarvel = (prop) => {
-    prop.marvel.dis = prop.marvel.marvel.filter((number) => {
-        return number.name.toLowerCase().indexOf(prop.marvel.sas) !== -1;
+let SwitchMarvel = prop => {
+    const newArrMar = prop.state.marvel.marvel.filter(number => {
+        return number.name.toLowerCase().indexOf(prop.state.sas.sas) !== -1;
     });
 
     return (
-        <div className='ctalog' >
-            {prop.marvel.dis.map((item) =>
-                <div className='catalog1'>
-                    <img src={item.image} onClick={() => prop.handler(item)}></img>
+        <div className="ctalog">
+            {newArrMar.map((item, index) => (
+                <div className="catalog1">
+                    <img
+                        src={item.image}
+                        onClick={() => prop.handler(dleePushCreateAction(item, index))}
+                    ></img>
 
                     <p>{item.name}</p>
                 </div>
-            )}
+            ))}
         </div>
-    )
-
+    );
 };
-
 
 export default SwitchMarvel;

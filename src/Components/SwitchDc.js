@@ -1,24 +1,23 @@
-
 import React from "react";
+import { dleePushCreateAction } from "./rdux-store/dlee-reducer";
 
-const SwitchDc = (prop) => {
-
-    prop.dc.dis = prop.dc.dc.filter((number) => {
-        return number.name.toLowerCase().indexOf(prop.dc.sas) !== -1;
+const SwitchDc = prop => {
+    const newArr = prop.state.dc.dc.filter(number => {
+        return number.name.toLowerCase().indexOf(prop.state.sas.sas) !== -1;
     });
 
-
     return (
-        <div className='ctalog'>
-
-            {prop.dc.dis.map((item,index) =>
-                <div className='catalog1'>
-                    <img src={item.image} onClick={() => prop.handler(item,index)}></img>
+        <div className="ctalog">
+            {newArr.map((item, index) => (
+                <div className="catalog1">
+                    <img
+                        src={item.image}
+                        onClick={() => prop.handler(dleePushCreateAction(item, index))}
+                    ></img>
                     <p>{item.name}</p>
                 </div>
-            )}
+            ))}
         </div>
-    )
-}
-export default SwitchDc
-
+    );
+};
+export default SwitchDc;
